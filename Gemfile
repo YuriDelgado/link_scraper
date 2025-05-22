@@ -57,3 +57,12 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
+
+group :test do
+  gem "database_cleaner-active_record", "~> 2.0"
+  gem "rspec-rails", "~> 5.0.0"
+  gem "factory_bot_rails", "~> 6.0"
+  gem "faker", "~> 3.5"
+  gem "shoulda-matchers", "~> 5.0"
+  gem "capybara", "~> 3.40"
+end
