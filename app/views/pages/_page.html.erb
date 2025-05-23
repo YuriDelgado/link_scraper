@@ -1,7 +1,10 @@
 <%= turbo_frame_tag dom_id(page) do %>
-  <div class="grid grid-cols-2 items-center border rounded p-3 shadow-sm hover:bg-gray-100 cursor-pointer transition"
-       onclick="location.href='<%= page_path(page) %>'">
-    <div><%= page.title || page.url %></div>
-    <div class="text-center"><%= page.links_count %></div>
-  </div>
+  <%= link_to page_path(page), data: { turbo_frame: "main_content" }, class: "block" do %>
+    <div class="grid grid-cols-4 py-2 items-center border-b border-gray-300 hover:bg-gray-100 cursor-pointer transition">
+      <div class="px-3 text-center"><%= page.id %></div>
+      <div class="px-3"><%= page.title || page.url %></div>
+      <div class="px-3 text-center"><%= page.links_count %></div>
+      <div class="px-3 text-center"><%= page.status %></div>
+    </div>
+  <% end %>
 <% end %>
