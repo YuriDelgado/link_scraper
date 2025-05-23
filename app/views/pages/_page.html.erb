@@ -1,0 +1,7 @@
+<%= turbo_frame_tag dom_id(page) do %>
+  <div class="grid grid-cols-2 items-center border rounded p-3 shadow-sm hover:bg-gray-100 cursor-pointer transition"
+       onclick="location.href='<%= page_path(page) %>'">
+    <div><%= page.title || page.url %></div>
+    <div class="text-center"><%= page.total_links %></div>
+  </div>
+<% end %>

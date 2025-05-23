@@ -1,0 +1,4 @@
+<%= form_with model: page, url: pages_path, method: :post, class: "flex gap-2" do |f| %>
+  <%= f.url_field :url, placeholder: "Enter a webpage URL", class: "border rounded px-4 py-2 w-80" %>
+  <%= f.submit "Scrape", class: "border border-blue-500 text-blue-500 rounded px-4 py-2 hover:bg-blue-500 hover:text-white transition" %>
+<% end %>

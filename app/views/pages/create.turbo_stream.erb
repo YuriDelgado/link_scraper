@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend "pages_table", partial: "pages/page", locals: { page: @page } %>
+
+<%= turbo_stream.replace "new_page", partial: "pages/form", locals: { page: Page.new } %>
