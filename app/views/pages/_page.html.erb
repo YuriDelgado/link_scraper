@@ -1,7 +1,6 @@
 <div id="<%= dom_id(page) %>_row">
   <%= link_to page_path(page), data: { turbo_frame: "main_content" }, class: "block" do %>
-    <div class="grid grid-cols-4 py-2 items-center border-b border-gray-300 hover:bg-gray-100 cursor-pointer transition">
-      <div class="px-3 text-center"><%= page.id %></div>
+    <div class="grid grid-cols-3 py-2 items-center border-b border-gray-300 hover:bg-gray-100 cursor-pointer transition">
       <div class="px-3"><%= page.title || page.url %></div>
       <div class="px-3 text-center"><%= page.links_count %></div>
       <div class="px-3 text-center"><%= page.status %></div>

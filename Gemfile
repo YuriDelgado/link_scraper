@@ -73,6 +73,7 @@ group :test do
   gem "factory_bot_rails", "~> 6.4"
   gem "database_cleaner-active_record"
   gem "simplecov", require: false
+  gem "webmock"
 end
 
 gem "nokogiri", "~> 1.18"

@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_23_035601) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_24_202702) do
   create_table "links", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "Not name provided"
     t.string "href"
     t.integer "page_id", null: false
     t.datetime "created_at", null: false

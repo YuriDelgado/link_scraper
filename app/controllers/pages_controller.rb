@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   def index
     @pagy, @pages = pagy(Page.where(user: current_user).order(created_at: :desc), link_extra: 'data-turbo-frame="pages_table")')
     @page = Page.new
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def show
