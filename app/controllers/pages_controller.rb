@@ -13,6 +13,8 @@ class PagesController < ApplicationController
     @page = current_user.pages.build(page_params)
 
     if @page.save
+      ScrapePageJob.perform_later(@page.id)
+
       respond_to do |format|
         format.turbo_stream
         format.html { redirect_to pages_path, notice: "Page added." }

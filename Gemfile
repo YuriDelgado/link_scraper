@@ -30,6 +30,7 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+gem "mission_control-jobs"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -54,6 +55,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "faker", "~> 3.5"
+  gem "rails-controller-testing"
 end
 
 group :development do
@@ -62,10 +65,14 @@ group :development do
 end
 
 group :test do
-  gem "database_cleaner-active_record", "~> 2.0"
-  gem "rspec-rails", "~> 5.0.0"
-  gem "factory_bot_rails", "~> 6.0"
-  gem "faker", "~> 3.5"
-  gem "shoulda-matchers", "~> 5.0"
-  gem "capybara", "~> 3.40"
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "rspec-rails", "~> 7.1"
+  gem "shoulda-matchers", "~> 6.4"
+  gem "factory_bot_rails", "~> 6.4"
+  gem "database_cleaner-active_record"
+  gem "simplecov", require: false
 end
+
+gem "nokogiri", "~> 1.18"

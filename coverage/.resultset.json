@@ -1,0 +1,70 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/yuridelgado/dev/rails-dev/link_scraper/spec/models/page_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/yuridelgado/dev/rails-dev/link_scraper/app/models/page.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/yuridelgado/dev/rails-dev/link_scraper/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/yuridelgado/dev/rails-dev/link_scraper/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/yuridelgado/dev/rails-dev/link_scraper/app/models/link.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1748118140
+  }
+}
