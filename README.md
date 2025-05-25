@@ -1,24 +1,109 @@
-# README
+# Link Scraper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails 8 application that allows users to submit and track the status of web pages, scrape them asynchronously, and view extracted links.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Rails 8 with built-in authentication (no Devise)
+- Turbo Frames & Turbo Streams for real-time updates
+- Solid Queue for background job processing
+- Pagy for pagination
+- Tailwind CSS for styling
 
-* System dependencies
+---
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+- Ruby 3.2+
+- Rails 8
+- PostgreSQL
+- Redis (for Action Cable if needed)
+- Node.js & Yarn (for JS dependencies)
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+git clone https://github.com/YuriDelgado/link-scraper.git
+cd link-scraper
 
-* Deployment instructions
+bundle install
+yarn install
 
-* ...
+rails db:setup
+```
+
+### Run the App
+
+```bash
+bin/dev
+```
+
+This runs:
+
+- Rails server
+- Tailwind via `css:watch`
+- Turbo with Hotwire
+- Solid Queue with inline jobs in development
+
+---
+
+## Usage
+
+1. Register or log in.
+2. Submit a URL.
+3. The page is queued for background processing.
+4. Watch the status and link count update in real-time.
+
+---
+
+## Architecture
+
+- `PagesController` handles page creation and display
+- `ScrapePageJob` performs async scraping using Solid Queue
+- Turbo Streams broadcast updates to specific DOM elements (`<turbo-frame id="page_#{id}">`)
+- Realtime features powered by ActionCable
+
+---
+
+## Running Tests
+
+RSpec is used for testing.
+
+```bash
+bundle exec rspec
+```
+
+Tests are located in:
+
+```
+spec/requests/         # Request specs for controllers
+spec/models/           # Model specs
+spec/jobs/             # Background jobs
+```
+
+---
+
+## Background Jobs (Solid Queue)
+
+To run jobs manually in development:
+
+```bash
+bin/jobs
+```
+
+Or with `bin/dev`, jobs run automatically in inline mode.
+
+---
+
+## Turbo Streams Debugging
+
+- Use Chrome DevTools → Network → WS tab to confirm WebSocket connection.
+- Use `Turbo::StreamsChannel.broadcast_replace_to(...)` to push updates.
+
+---
+
+## License
+
+MIT
