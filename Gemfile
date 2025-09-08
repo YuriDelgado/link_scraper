@@ -70,7 +70,7 @@ group :test do
   gem "selenium-webdriver"
   gem "rspec-rails", "~> 7.1"
   gem "shoulda-matchers", "~> 6.4"
-  gem "factory_bot_rails", "~> 6.4"
+  gem "factory_bot_rails", "~> 6.5"
   gem "database_cleaner-active_record"
   gem "simplecov", require: false
   gem "webmock"
